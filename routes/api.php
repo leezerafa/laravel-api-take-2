@@ -21,11 +21,10 @@ use Illuminate\Http\Request;
 //Useing custom middleware apiauth
 Route::group(['prefix' => 'v1','middleware' => 'apiauth'], function(){
 
-	Route::get('/post/{id}', function ($id) {
-    	return new PostResource(Post::find($id));
-	});	
+	Route::get('/post/{id}','ApiController@getPost');	
+	Route::get('/posts','ApiController@getPosts');
 
-	Route::get('/posts', function () {
-    	return new PostResource(Post::all());
-	});	
+	Route::fallback(function(){
+    	return response()->json(['status' => 'failed', 'data' => null, 'message' => 'End Point not found']);
+	});
 });
