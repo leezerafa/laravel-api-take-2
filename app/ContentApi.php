@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*
+Creating the Content Api model with mutator to set the api key automatically on creatation
+*/
+
 class ContentApi extends Model
 {
     protected $fillable = ['api_name','api_key','user_id'];
