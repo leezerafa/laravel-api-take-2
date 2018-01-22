@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+//Useing custom middleware apiauth
 Route::group(['prefix' => 'v1','middleware' => 'apiauth'], function(){
 
 	Route::get('/post/{id}', function ($id) {
