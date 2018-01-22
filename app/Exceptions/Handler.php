@@ -47,7 +47,14 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    {   
+        if ($exception instanceof NotFoundHttpException) {
+
+                if ($request->is('api/*')) {
+                    return response()->json(['error' => 'Not Found'], 404);
+                }
+                return response()->view('404', [], 404);
+        }
         return parent::render($request, $exception);
     }
 }
