@@ -10,7 +10,7 @@ use Request;
 class ApiAuth
 {
     /**
-     * Handle an incoming request.
+     * Handle an incoming request for API login
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
