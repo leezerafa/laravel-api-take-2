@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\Resource;
 class PostResource extends Resource
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource into an array for the post json response
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
